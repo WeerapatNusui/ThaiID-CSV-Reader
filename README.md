@@ -50,7 +50,7 @@ To test run this project
   $ ng s -o
 ```
 
-To test build file
+To build file
 
 ```bash
   $ ng build
