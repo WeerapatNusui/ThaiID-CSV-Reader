@@ -2,7 +2,7 @@
 This project works by passing data from a CSV file obtained from the ThaiID ID card reader program and then displaying it on a web page and allowing additional information to be recorded into the database system.
 
 ## Tech Stack
-**Client:** Angular 17, HTML, CSS,
+**Front-End:** Angular 17, HTML, CSS,
 
 **Back-End:** PHP 8.3.0, TypeScript, JavaScript
 
