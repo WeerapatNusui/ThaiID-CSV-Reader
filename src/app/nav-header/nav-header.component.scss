@@ -1,0 +1,33 @@
+button {
+  margin: 0px 5px;
+  font-size: 16px;
+  font-weight: 900;
+  color: white;
+  background: unset;
+  border: unset;
+  cursor: pointer;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+}
+
+.title {
+  margin-left: 40px;
+}
+
+.title span {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.menu {
+  margin-right: 40px;
+}
+
+.fa-address-card {
+  font-size: 30px;
+}

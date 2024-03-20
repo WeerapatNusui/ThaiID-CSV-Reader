@@ -1,0 +1,170 @@
+<!-- Edit -->
+<nav id="boxEdit">
+  <nav class="boxForm">
+    <button (click)="EditClose()" type="button" class="close">
+      <i class="fa-solid fa-square-xmark"></i>
+    </button>
+    <form (ngSubmit)="EditSumit()" [formGroup]="formEditData" class="editForm" autocomplete="off">
+      <!-- รับข้อมูลมาจากบัตรประชาชน -->
+      <nav class="line">
+        <label for="no">เลขบัตรประชาชน</label>
+        <input formControlName="no" type="text" id="no">
+      </nav>
+      <nav class="line">
+        <label for="birth">วันเกิด</label>
+        <input formControlName="birth" type="date" id="birth">
+      </nav>
+      <nav class="split">
+        <nav class="line45">
+          <label class="l" for="gender">เพศ</label>
+          <input class="l" formControlName="gender" type="text" id="gender">
+        </nav>
+        <nav class="line45">
+          <label class="r" for="title">คำนำหน้า</label>
+          <input class="r" formControlName="title" type="text" id="title">
+        </nav>
+      </nav>
+      <nav class="split">
+        <nav class="line45">
+          <label class="l" for="fname">ชื่อ</label>
+          <input class="l" formControlName="fname" type="text" id="fname">
+        </nav>
+        <nav class="line45">
+          <label class="r" for="lname">สกุล</label>
+          <input class="r" formControlName="lname" type="text" id="lname">
+        </nav>
+      </nav>
+      <nav class="line">
+        <label for="address">ที่อยู่</label>
+        <textarea formControlName="address" id="address" cols="30" rows="5"></textarea>
+      </nav>
+      <!-- ผู้ใช้ใส่ข้อมูลเพิ่มเติม -->
+      <nav class="line">
+        <label for="disease">โรคประจำตัว</label>
+        <textarea formControlName="disease" id="disease" cols="30" rows="5"></textarea>
+      </nav>
+      <nav class="line">
+        <label for="allergy">ประวัติแพ้ยา/อาหาร</label>
+        <textarea formControlName="allergy" id="allergy" cols="30" rows="5"></textarea>
+      </nav>
+      <nav class="split">
+        <nav class="line45">
+          <label class="l" for="pressure">ความดันโลหิต</label>
+          <input class="l" formControlName="pressure" type="number" min="0" max="300" step="0.01" id="pressure">
+        </nav>
+        <nav class="line45">
+          <label class="r" for="weight">น้ำหนัก</label>
+          <input class="r" formControlName="weight" type="number" min="0" max="300" step="0.01" id="weight">
+        </nav>
+      </nav>
+      <nav class="line">
+        <label for="treatment">การรักษาของแพทย์</label>
+        <textarea formControlName="treatment" id="treatment" cols="30" rows="5"></textarea>
+      </nav>
+      <nav class="lineSubmit">
+        <button class="submit" [disabled]="formEditData.invalid" type="submit">บันทึกข้อมูล</button>
+      </nav>
+    </form>
+  </nav>
+</nav>
+<!-- End Edit -->
+<nav class="body">
+  <nav class="header">
+    <app-nav-header></app-nav-header>
+  </nav>
+  <nav class="content">
+    <nav class="viewData">
+      <nav class="title">
+        <span class="count">ข้อมูล {{length}} รายการ</span>
+        <button (click)="GetCSV()" class="save" type="button">
+          <i class="fa-solid fa-floppy-disk"></i>
+          บันทึก CSV
+        </button>
+      </nav>
+      <hr>
+      <nav class="search">
+        <nav class="selectSearch">
+          <nav class="searcMenu">
+            <span>ค้นหา : </span>
+            <label class="searchNoText" for="searchNo">เลขบัตร</label>
+            <span> | </span>
+            <label class="searchDateText" for="searchDate">วันเดือนปี</label>
+          </nav>
+          <input type="radio" name="search" id="searchNo" checked hidden>
+          <input type="radio" name="search" id="searchDate" hidden>
+          <form (ngSubmit)="SearchNo()" [formGroup]="formSearchNo" class="searchNo">
+            <label for="dataNo"> เลขบัตร </label>
+            <input formControlName="dataNo" type="text" id="dataNo">
+            <button type="submit">ค้นหา</button>
+          </form>
+          <form (ngSubmit)="SearchDate()" [formGroup]="formSearchDate" class="searchDate">
+            <label for="startDate">วันที่ </label>
+            <input formControlName="startDate" type="date" id="startDate">
+            <label for="endDate"> ถึงวันที่ </label>
+            <input formControlName="endDate" type="date" id="endDate">
+            <button type="submit">ค้นหา</button>
+          </form>
+          <span>ค้นหา {{lengthSearch}} รายการ</span>
+        </nav>
+
+      </nav>
+      <nav class="scallTable">
+        <table class="viewTable">
+          <thead>
+            <tr>
+              <th class="tbTop">เลขบัตรประชาชน</th>
+              <th class="tbTop">ชื่อ-สกุล</th>
+              <th class="tbTop">อายุ</th>
+              <th class="tbTop">วันที่บันทึก</th>
+              <th class="tbTop">จัดการ</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="length < 1">
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+          <tbody *ngIf="length > 0">
+            <tr *ngFor="let item of data | paginate: { itemsPerPage: itemsPerPage, currentPage: page }">
+              <td>{{item.pNo}}</td>
+              <td>{{item.pTitle}}{{item.pFName}} {{item.pLName}}</td>
+              <td>{{GetAge(item.pBirth)}}</td>
+              <td>{{item.pDate}}</td>
+              <td>
+                <button (click)="viewOne(item.pPaper)" type="button">
+                  <i class="fa-solid fa-print"></i>
+                </button>
+                <button (click)="EditOpen(item.pPaper)" type="button">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button (click)="DelData(item.pPaper)" type="button">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>เลขบัตรประชาชน</th>
+              <th>ชื่อ-สกุล</th>
+              <th>อายุ</th>
+              <th>วันที่บันทึก</th>
+              <th>จัดการ</th>
+            </tr>
+          </tfoot>
+        </table>
+      </nav>
+      <nav class="page">
+        <pagination-controls (pageChange)="page = $event" previousLabel="ก่อนหน้า"
+          nextLabel="ถัดไป"></pagination-controls>
+      </nav>
+    </nav>
+  </nav>
+  <nav class="footer">
+    <app-nav-footer></app-nav-footer>
+  </nav>
+</nav>

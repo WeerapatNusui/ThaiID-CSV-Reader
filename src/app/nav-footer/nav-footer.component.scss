@@ -1,0 +1,53 @@
+button {
+  position: sticky;
+  background: unset;
+  border: unset;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
+}
+
+
+.iMenu {
+  font-size: 18px;
+  color: white;
+}
+
+button span {
+  position: absolute;
+  top: 16px;
+  text-wrap: nowrap;
+  text-align: center;
+  color: white;
+}
+
+.footerBox {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0px 10%;
+  height: 40px;
+}
+
+.title {
+  margin-left: 40px;
+}
+
+.title span {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.menu {
+  margin-right: 40px;
+}

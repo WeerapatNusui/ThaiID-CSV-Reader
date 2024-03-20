@@ -1,0 +1,137 @@
+.content {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.boxForm {
+  padding: 30px;
+  width: 600px;
+  height: max-content;
+  background: white;
+  margin: 30px;
+}
+
+form {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 18px;
+  font-weight: 600px;
+  width: 100%;
+}
+
+input {
+  margin-bottom: 20px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.lineSubmit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0px 10px;
+}
+
+.submit,.read {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 900;
+  width: 50%;
+  height: 40px;
+  border: unset;
+  background: rgb(2, 57, 158);
+  color: white;
+  cursor: pointer;
+}
+
+.submit:hover,.read:hover {
+  background: rgb(43, 109, 231);
+}
+
+.submit:disabled {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 900;
+  width: 50%;
+  height: 40px;
+  border: unset;
+  background: rgb(161, 161, 161);
+  color: white;
+  cursor: not-allowed;
+}
+
+.split {
+  display: flex;
+  justify-content: space-between;
+}
+
+.line45 {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.line {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  resize: none;
+  margin-bottom: 20px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.boxTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.boxTitle span {
+  font-size: 26px;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxTitle button {
+  margin-right: -20px;
+}
+
+input:disabled {
+  color: blue;
+  border-top: unset;
+  border-left: unset;
+  border-right: unset;
+  border-bottom: 1px solid black;
+  background: unset;
+}
+
+p {
+  color: blue;
+  border-top: unset;
+  border-left: unset;
+  border-right: unset;
+  border-bottom: 1px solid black;
+  // text-decoration: underline black;
+}
+
+.dateSave {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  color: blue;
+}

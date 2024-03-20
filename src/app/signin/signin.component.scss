@@ -1,0 +1,64 @@
+.content {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signinForm {
+  padding: 30px;
+  width: 300px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+.input label {
+  margin-top: 10px;
+}
+
+.input input {
+  padding: 5px;
+  border-top: unset;
+  border-left: unset;
+  border-right: unset;
+  border-bottom: 0.5px solid black;
+}
+
+.input input:focus {
+  outline: unset;
+}
+
+.submit {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 900;
+  border: unset;
+  color: white;
+  background: rgb(54, 54, 192);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background: rgb(127, 127, 240);
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.fa-address-card {
+  font-size: 28px;
+}

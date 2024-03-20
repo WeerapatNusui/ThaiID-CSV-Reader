@@ -1,0 +1,20 @@
+<nav class="box">
+  <nav class="title">
+    <i class="fa-solid fa-address-card"></i>
+    <span> ThaiID CSV Reader</span>
+  </nav>
+  <nav class="menu">
+    <button (click)="GoTo('/addform')" type="button">
+      <i class="fa-solid fa-file-signature"></i>
+      <span> เก็บข้อมูล</span>
+    </button>
+    <button (click)="GoTo('/viewdata')" type="button">
+      <i class="fa-solid fa-folder-open"></i>
+      <span> ข้อมูลทั้งหมด</span>
+    </button>
+    <button (click)="Signout()" type="button">
+      <i class="fa-solid fa-door-open"></i>
+      <span> ออกจากระบบ</span>
+    </button>
+  </nav>
+</nav>

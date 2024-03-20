@@ -1,0 +1,17 @@
+<nav class="body">
+  <nav class="content">
+    <form (ngSubmit)="Signin()" [formGroup]="formSignin" class="signinForm" autocomplete="off">
+      <nav>
+        <i class="fa-solid fa-address-card"></i>
+        <span class="title"> ThaiID CSV Reader</span>
+      </nav>
+      <nav class="input">
+        <label for="user">ชื่อผู้ใช้</label>
+        <input formControlName="user" type="text" id="user">
+        <label for="pass">รหัสผ่าน</label>
+        <input formControlName="pass" type="password" id="pass">
+        <button class="submit" type="submit">เข้าสู่ระบบ</button>
+      </nav>
+    </form>
+  </nav>
+</nav>

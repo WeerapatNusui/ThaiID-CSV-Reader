@@ -1,0 +1,347 @@
+.viewData {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.scallTable {
+  display: flex;
+  overflow-x: auto;
+}
+
+.viewTable {
+  width: 100%;
+  border-spacing: unset;
+  background: white;
+  padding: 30px;
+
+}
+
+th {
+  padding: 10px 5px;
+  font-size: 18px;
+  background: rgb(199, 214, 255);
+}
+
+.tbTop {
+  border-bottom: 1px solid black;
+}
+
+td {
+  border-bottom: 1px solid black;
+  text-align: center;
+  padding: 10px 5px;
+  font-size: 14px;
+  font-weight: 100;
+  text-wrap: nowrap;
+}
+
+hr {
+  width: 100%;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 900;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+tbody {
+  max-height: calc(100vh - 375px);
+  overflow-y: auto;
+}
+
+.page {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+}
+
+td button {
+  margin: 0px 5px;
+  background: unset;
+  border: unset;
+  cursor: pointer;
+}
+
+.fa-print {
+  font-size: 26px;
+  color: gray
+}
+
+.fa-pen-to-square {
+  font-size: 26px;
+  color: blue;
+}
+
+.fa-trash {
+  font-size: 26px;
+  color: red;
+}
+
+.save {
+  font-size: 20px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: unset;
+  background: rgb(2, 57, 158);
+  color: white;
+  cursor: pointer;
+}
+
+.save:hover {
+  background: rgb(43, 109, 231);
+}
+
+.fa-floppy-disk {
+  color: white;
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.close {
+  z-index: 1;
+  position: absolute;
+  color: red;
+  font-size: 60px;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  border: unset;
+  background: unset;
+}
+
+.fa-square-xmark {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border-radius: 10px;
+  width: 60px;
+  height: 60px;
+}
+
+.boxForm {
+  display: flex;
+  width: max-content;
+  height: max-content;
+  position: sticky;
+}
+
+.editForm {
+  background: whitesmoke;
+  height: calc(100vh - 200px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  margin: 50px;
+}
+
+.editForm label {
+  font-size: 18px;
+  width: 100%;
+}
+
+.editForm input {
+  margin-bottom: 20px;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.lineSubmit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.submit,.read {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 900;
+  width: 50%;
+  height: 40px;
+  border: unset;
+  background: rgb(2, 57, 158);
+  color: white;
+  cursor: pointer;
+}
+
+.submit:hover,.read:hover {
+  background: rgb(43, 109, 231);
+}
+
+.submit:disabled {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 900;
+  width: 50%;
+  height: 40px;
+  border: unset;
+  background: rgb(161, 161, 161);
+  color: white;
+  cursor: not-allowed;
+}
+
+.split {
+  display: flex;
+  justify-content: space-between;
+}
+
+.line45 {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.line {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  resize: none;
+  margin-bottom: 20px;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.search {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width:900px) {
+  .searchDate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #boxEdit {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    width: 100vw;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media screen and (max-width:900px) {
+  .searchDate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .searchDate input {
+    margin-bottom: 10px;
+  }
+
+  #boxEdit {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.searchDate input {
+  width: 200px;
+  padding: 5px;
+  border-top: unset;
+  border-left: unset;
+  border-right: unset;
+  border-bottom: 1px solid black;
+  background: unset;
+}
+
+.searchDate input:focus {
+  outline: unset;
+}
+
+.searchDate button {
+  font-size: 20px;
+  padding: 5px 10px;
+  border: unset;
+  background: rgb(2, 57, 158);
+  color: white;
+  margin: 0px 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.searchDate button:hover {
+  background: rgb(43, 109, 231);
+}
+
+.searchNo input {
+  width: 200px;
+  padding: 5px;
+  border-top: unset;
+  border-left: unset;
+  border-right: unset;
+  border-bottom: 1px solid black;
+  background: unset;
+}
+
+.searchNo input:focus {
+  outline: unset;
+}
+
+.searchNo button {
+  font-size: 20px;
+  padding: 5px 10px;
+  border: unset;
+  background: rgb(2, 57, 158);
+  color: white;
+  margin: 0px 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.searchNo button:hover {
+  background: rgb(43, 109, 231);
+}
+
+.selectSearch {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.searchNo {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#searchNo:checked ~ .searchDate {
+  display: none;
+}
+
+#searchDate:checked ~ .searchNo {
+  display: none;
+}
+
+.searchNoText,.searchDateText {
+  cursor: pointer;
+}

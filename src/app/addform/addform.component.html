@@ -1,0 +1,75 @@
+<nav class="body">
+  <nav class="header">
+    <app-nav-header></app-nav-header>
+  </nav>
+  <nav class="content">
+    <nav class="boxForm">
+      <nav class="boxTitle">
+        <span>เก็บข้อมูล</span>
+        <button class="read" (click)="LoadData()" type="button">อ่านบัตร</button>
+      </nav>
+      <form (ngSubmit)="AddData()" [formGroup]="formAddData" autocomplete="off">
+        <nav class="line">
+          <label for="no">เลขบัตรประชาชน</label>
+          <input formControlName="no" type="text" id="no">
+        </nav>
+        <nav class="line">
+          <label for="birth">วันเกิด</label>
+          <input formControlName="birth" type="date" id="birth">
+        </nav>
+        <nav class="split">
+          <nav class="line45">
+            <label class="l" for="gender">เพศ</label>
+            <input class="l" formControlName="gender" type="text" id="gender">
+          </nav>
+          <nav class="line45">
+            <label class="r" for="title">คำนำหน้า</label>
+            <input class="r" formControlName="title" type="text" id="title">
+          </nav>
+        </nav>
+        <nav class="split">
+          <nav class="line45">
+            <label class="l" for="fname">ชื่อ</label>
+            <input class="l" formControlName="fname" type="text" id="fname">
+          </nav>
+          <nav class="line45">
+            <label class="r" for="lname">สกุล</label>
+            <input class="r" formControlName="lname" type="text" id="lname">
+          </nav>
+        </nav>
+        <nav class="line">
+          <label for="address">ที่อยู่</label>
+          <textarea formControlName="address" id="address" cols="30" rows="5"></textarea>
+        </nav>
+        <nav class="line">
+          <label for="disease">โรคประจำตัว</label>
+          <textarea formControlName="disease" id="disease" cols="30" rows="5"></textarea>
+        </nav>
+        <nav class="line">
+          <label for="allergy">ประวัติแพ้ยา/อาหาร</label>
+          <textarea formControlName="allergy" id="allergy" cols="30" rows="5"></textarea>
+        </nav>
+        <nav class="split">
+          <nav class="line45">
+            <label class="l" for="pressure">ความดันโลหิต</label>
+            <input class="l" formControlName="pressure" type="number" min="0" max="300" step="0.01" id="pressure">
+          </nav>
+          <nav class="line45">
+            <label class="r" for="weight">น้ำหนัก</label>
+            <input class="r" formControlName="weight" type="number" min="0" max="300" step="0.01" id="weight">
+          </nav>
+        </nav>
+        <nav class="line">
+          <label for="treatment">การรักษาของแพทย์</label>
+          <textarea formControlName="treatment" id="treatment" cols="30" rows="5"></textarea>
+        </nav>
+        <nav class="lineSubmit">
+          <button class="submit" [disabled]="formAddData.invalid" type="submit">บันทึกข้อมูล</button>
+        </nav>
+      </form>
+    </nav>
+  </nav>
+  <nav class="footer">
+    <app-nav-footer></app-nav-footer>
+  </nav>
+</nav>

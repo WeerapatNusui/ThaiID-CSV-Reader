@@ -1,0 +1,63 @@
+<nav class="content">
+  <nav class="boxForm">
+    <form autocomplete="off">
+      <nav class="dateSave">
+        <span>{{pDate}}</span>
+      </nav>
+      <nav class="line">
+        <label for="no">เลขบัตรประชาชน</label>
+        <input type="text" id="no" disabled value="{{pNo}}">
+      </nav>
+      <nav class="line">
+        <label for="birth">วันเกิด</label>
+        <input type="date" id="birth" disabled value="{{pBirth}}">
+      </nav>
+      <nav class="split">
+        <nav class="line45">
+          <label for="gender">เพศ</label>
+          <input type="text" id="gender" disabled value="{{pGender}}">
+        </nav>
+        <nav class="line45">
+          <label for="title">คำนำหน้า</label>
+          <input type="text" id="title" disabled value="{{pTitle}}">
+        </nav>
+      </nav>
+      <nav class="split">
+        <nav class="line45">
+          <label for="fname">ชื่อ</label>
+          <input type="text" id="fname" disabled value="{{pFName}}">
+        </nav>
+        <nav class="line45">
+          <label for="lname">สกุล</label>
+          <input type="text" id="lname" disabled value="{{pLName}}">
+        </nav>
+      </nav>
+      <nav class="line">
+        <label for="address">ที่อยู่</label>
+        <p id="address">{{pAddress}}</p>
+      </nav>
+      <nav class="line">
+        <label for="disease">โรคประจำตัว</label>
+        <p id="disease">{{pDisease}}</p>
+      </nav>
+      <nav class="line">
+        <label for="allergy">ประวัติแพ้ยา/อาหาร</label>
+        <p id="allergy">{{pAllergy}}</p>
+      </nav>
+      <nav class="split">
+        <nav class="line45">
+          <label for="pressure">ความดันโลหิต</label>
+          <input type="number" min="0" max="300" step="0.01" id="pressure" disabled value="{{pPressure}}">
+        </nav>
+        <nav class="line45">
+          <label for="weight">น้ำหนัก</label>
+          <input type="number" min="0" max="300" step="0.01" id="weight" disabled value="{{pWeight}}">
+        </nav>
+      </nav>
+      <nav class="line">
+        <label for="treatment">การรักษาของแพทย์</label>
+        <p id="treatment">{{pTreatment}}</p>
+      </nav>
+    </form>
+  </nav>
+</nav>
