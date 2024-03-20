@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class ApiResult {
 
   constructor(private http: HttpClient) {}
-  backendURL: string = 'http://localhost:5000/cardreader/';
+  backendURL: string = 'http://localhost:5000/ThaiID-CSV-Reader/';
   viewOneURL: string = 'http://localhost:4200/viewone';
 
   postResult(location: any,data: any) {
