@@ -1,6 +1,13 @@
 # ThaiID CSV Reader
 This project works by passing data from a CSV file obtained from the ThaiID ID card reader program and then displaying it on a web page and allowing additional information to be recorded into the database system.
 
+## Demo
+https://demo.centercore.org/ThaiID-CSV-Reader/
+
+Test user
+- user: test
+- password: 0000
+
 ## Tech Stack
 **Front-End:** Angular 17, HTML, CSS,
 
@@ -55,10 +62,3 @@ To build file
 ```bash
   $ ng build
 ```
-
-## Demo
-https://demo.centercore.org/ThaiID-CSV-Reader/
-
-Test user
-- user: test
-- password: 0000
